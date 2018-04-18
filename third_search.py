@@ -14,8 +14,8 @@ class OrgSearch(unittest.TestCase):
         driver.get('https://yandex.ru')
         self.assertIn('Яндекс', driver.title)
         time.sleep(2)
-        search = driver.find_element_by_name('text')
-        search.send_keys('Тензор')
+        self.assertTrue(driver.find_element_by_name('text'))
+        driver.find_element_by_name('text').send_keys('Тензор')
         time.sleep(1)
         self.assertTrue(driver.find_element_by_xpath("//div[ancestor::div/@class='popup__content']"))
         time.sleep(1)
@@ -23,7 +23,6 @@ class OrgSearch(unittest.TestCase):
         time.sleep(1)
         self.assertTrue(driver.find_element_by_xpath("//ul[ancestor::div/@class='content__left']"))
         self.assertEqual(driver.find_element_by_xpath("//a[ancestor::div/@class='organic__subtitle typo typo_type_greenurl'][1]").text, 'tensor.ru')
-        #assert 'tensor.ru' == driver.find_element_by_xpath("//a[ancestor::div/@class='organic__subtitle typo typo_type_greenurl'][1]").text
         time.sleep(2)
 
         def tearDown(self):
