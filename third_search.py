@@ -64,7 +64,7 @@ class OrgSearch(unittest.TestCase):
 
     def image_check(self):
         '''
-        Проверяем, что присутсвуют изображение и кнопки вперед-назад
+        Проверяем, что присутствуют изображение и кнопки вперед-назад
         '''
         self.assertTrue(self.driver.find_element_by_xpath("//img[@class='image__image']"))
         self.assertTrue(self.driver.find_element_by_class_name('layout__nav__left'))
