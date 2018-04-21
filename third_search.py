@@ -8,7 +8,9 @@ import time
 
 class OrgSearch(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome('C:\\Python\\drivers\\chromedriver.exe')
+        driver_path_win = 'C:\\Python\\drivers\\chromedriver.exe'
+        driver_path_nix = '/Users/submindly/Projects/webdrivers/chromedriver'
+        self.driver = webdriver.Chrome(driver_path_nix)
 
     def test_search_in_ya(self):
         driver = self.driver
